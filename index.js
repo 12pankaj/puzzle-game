@@ -60,19 +60,25 @@ var images=[ 	[7,5,2,1,8,4,6,3,9],
 				var co=btn[y].innerHTML;
 			if(btn[y].innerHTML!="<img src=\" \">")
 			{
-			click.play();
-				move++;
+				let valid=false;
 			  	moves.innerText="Moves : "+move
 				var changeindex = [y + 1, y - 1, y + 3, y - 3];
     for (var i of changeindex) {
       if (i >= 0 && i <= 8 && btn[i].innerHTML == "<img src=\" \">") {
         btn[i].innerHTML = co;
         btn[y].innerHTML = "<img src=\" \">";
-        wincheck();
-        return;
+        valid=true;
+	      wincheck();
+	      
+        
       }
 		  }
-			
+	if(valid){
+
+			click.play();
+				move++;
+			  moves.innerText="Moves : "+move
+		  }		
 		}
 	}
 		function wincheck(){
