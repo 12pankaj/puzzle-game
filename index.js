@@ -98,6 +98,9 @@ function wincheck() {
       btn[i].innerHTML = `<img src="im${rand}/${i + 1}.jpg">`;
       i++;
     }
+    if (btn[8].innerHTML == '<img src=" ">') {
+      btn[8].innerHTML = `<img src="im${rand}/9.jpg">`;
+    }
     if (btn[8].innerHTML == `<img src="im${rand}/9.jpg">`) {
       setTimeout(() => {
         var res = confirm(
